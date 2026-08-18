@@ -49,7 +49,10 @@ export const homeData: HomeData = {
 				description:
 					'Craquez pour une pièce déjà restaurée et prête à rejoindre votre intérieur. Chaque meuble est unique et visible dès maintenant dans la boutique en ligne.',
 				cta: { label: 'Voir la boutique', href: '/boutique' },
-				image: placeholderImage,
+				image: {
+					src: "/images/services-renovation-de-meubles-a-istres.webp",
+					alt: "Services de rénovation de meubles à Istres, atelier artisanale de rénovation de meubles."
+				},
 			},
 			{
 				number: 'II',
@@ -58,7 +61,10 @@ export const homeData: HomeData = {
 				description:
 					'Des meubles bruts (non rénovés) sont disponible à la réservation sur notre site web. Vous repérez chez nous un meuble brut qui vous plaît ? Commandez sa rénovation et nous le transformons selon vos goûts : couleurs, finitions, ornements.',
 				cta: { label: 'Découvrir nos meubles bruts', href: '#' },
-				image: placeholderImage,
+				image: {
+					src: "/images/commode-brute_services-renovation-de-meubles-a-istres.webp",
+					alt: "Services de rénovation de meubles à Istres, atelier artisanale de rénovation de meubles."
+				},
 			},
 			{
 				number: 'III',
@@ -67,7 +73,10 @@ export const homeData: HomeData = {
 				description:
 					'Vous possédez déjà un meuble qui compte à vos yeux ? Offrez-lui une seconde vie grâce à un accompagnement sur-mesure, à l’image de votre intérieur.',
 				cta: { label: 'Demander un devis', href: '#contact' },
-				image: placeholderImage,
+				image: {
+					src: "/images/services-renovation-de-meubles-sur-mesure--a-istres.webp",
+					alt: "Services de rénovation de meubles sur mesure à Istres, atelier artisanale de rénovation de meubles."
+				},
 			},
 		],
 	},

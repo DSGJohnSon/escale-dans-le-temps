@@ -38,7 +38,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 							key={item.number}
 							as="li"
 							className={cn(
-								'grid border border-border bg-card/50 md:w-4/5 md:grid-cols-[minmax(0,320px)_1fr] md:items-center',
+								'grid border border-border bg-card/50 md:w-4/5 md:grid-cols-[minmax(0,240px)_1fr] md:items-center',
 								alignByIndex[i],
 							)}
 						>
