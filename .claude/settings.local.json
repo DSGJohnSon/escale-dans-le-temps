@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(tasklist //FI \"PID eq 15976\")",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(npx eslint *)",
+      "Bash(node _check-homepage.mjs)",
+      "Bash(node _check-scroll.mjs)",
+      "Bash(taskkill //PID 25088 //F)",
+      "Bash(npm uninstall *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

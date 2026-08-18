@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 48s linear infinite;
+}
+
+:root {
+  --background: #F3EAD6;
+  --foreground: #1A2238;
+  --card: #FBF6EA;
+  --card-foreground: #1A2238;
+  --popover: #FBF6EA;
+  --popover-foreground: #1A2238;
+  --primary: #C68B49;
+  --primary-foreground: #1A2238;
+  --secondary: #E4D5B7;
+  --secondary-foreground: #1A2238;
+  --muted: #EAE0C8;
+  --muted-foreground: #6E6553;
+  --accent: #EAD9B8;
+  --accent-foreground: #1A2238;
+  --destructive: #B3452C;
+  --border: #DCCBA0;
+  --input: #DCCBA0;
+  --ring: #C68B49;
+  --chart-1: #C68B49;
+  --chart-2: #4C6B8A;
+  --chart-3: #8FA6A3;
+  --chart-4: #B3452C;
+  --chart-5: #1A2238;
+  --radius: 0.625rem;
+  --sidebar: #EAE0C8;
+  --sidebar-foreground: #1A2238;
+  --sidebar-primary: #C68B49;
+  --sidebar-primary-foreground: #FBF6EA;
+  --sidebar-accent: #E4D5B7;
+  --sidebar-accent-foreground: #1A2238;
+  --sidebar-border: #DCCBA0;
+  --sidebar-ring: #C68B49;
+}
+
+.dark {
+  --background: #12182B;
+  --foreground: #F3EAD6;
+  --card: #1A2238;
+  --card-foreground: #F3EAD6;
+  --popover: #1A2238;
+  --popover-foreground: #F3EAD6;
+  --primary: #C68B49;
+  --primary-foreground: #1A2238;
+  --secondary: #24304D;
+  --secondary-foreground: #F3EAD6;
+  --muted: #1F2A44;
+  --muted-foreground: #B8AD91;
+  --accent: #2C3A5C;
+  --accent-foreground: #F3EAD6;
+  --destructive: #D9714F;
+  --border: #F3EAD61F;
+  --input: #F3EAD626;
+  --ring: #C68B49;
+  --chart-1: #D9A567;
+  --chart-2: #6E8FB0;
+  --chart-3: #9DBAB6;
+  --chart-4: #D9714F;
+  --chart-5: #F3EAD6;
+  --sidebar: #0F1526;
+  --sidebar-foreground: #F3EAD6;
+  --sidebar-primary: #C68B49;
+  --sidebar-primary-foreground: #1A2238;
+  --sidebar-accent: #1F2A44;
+  --sidebar-accent-foreground: #F3EAD6;
+  --sidebar-border: #F3EAD61F;
+  --sidebar-ring: #C68B49;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans scroll-smooth motion-reduce:scroll-auto;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
