@@ -16,6 +16,7 @@ export type ProductPhoto =
 
 export interface ProductInput {
 	name: string;
+	subtitle?: string;
 	category: ProductCategory;
 	status: ProductStatus;
 	addedAt: string;

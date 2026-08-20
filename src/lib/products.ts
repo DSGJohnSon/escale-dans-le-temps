@@ -55,29 +55,26 @@ export function getProductsWithBeforeAfter(): Product[] {
 
 /**
  * Miniature avec effet de survol pour les cartes de la Vitrine.
- * - 2 photos simples ou plus : la 1re puis la 2e.
- * - 1 photo simple + un avant/après : la photo simple puis le "après".
- * - 1 photo simple, aucun avant/après : la même photo des deux côtés.
- * - aucune photo simple, un avant/après : le "avant" puis le "après".
+ * Les avant/après sont prioritaires sur les photos simples.
+ * - un avant/après : le "après" puis le "avant".
+ * - aucun avant/après, 2 photos simples ou plus : la 1re puis la 2e.
+ * - aucun avant/après, 1 photo simple : la même photo des deux côtés.
  */
 export function getShowcaseThumbnail(product: Product): { default: ImageAsset; hover: ImageAsset } {
-	const singles = getSinglePhotos(product);
 	const beforeAfters = getBeforeAfterPhotos(product);
+
+	if (beforeAfters.length > 0) {
+		return { default: beforeAfters[0].after, hover: beforeAfters[0].before };
+	}
+
+	const singles = getSinglePhotos(product);
 
 	if (singles.length >= 2) {
 		return { default: singles[0].image, hover: singles[1].image };
 	}
 
-	if (singles.length === 1 && beforeAfters.length > 0) {
-		return { default: singles[0].image, hover: beforeAfters[0].after };
-	}
-
 	if (singles.length === 1) {
 		return { default: singles[0].image, hover: singles[0].image };
-	}
-
-	if (beforeAfters.length > 0) {
-		return { default: beforeAfters[0].before, hover: beforeAfters[0].after };
 	}
 
 	const fallback: ImageAsset = { src: '/images/placeholder.jpg', alt: product.name };

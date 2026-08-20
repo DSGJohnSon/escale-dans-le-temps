@@ -12,3 +12,9 @@ export interface ImageAsset {
 	src: string;
 	alt: string;
 }
+
+/** Image accompagnée de ses dimensions intrinsèques (voir `withImageSize`). */
+export interface SizedImage extends ImageAsset {
+	width: number;
+	height: number;
+}

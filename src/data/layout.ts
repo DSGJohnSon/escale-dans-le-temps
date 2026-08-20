@@ -2,7 +2,7 @@ import type { HeaderContent } from '@/types/layout';
 
 export const headerContent: HeaderContent = {
 	branding: {
-		name: "L'Escale dans le temps",
+		name: "Escale dans le temps",
 		tagline: 'Rénovation de meubles',
 	},
 	navLinks: [

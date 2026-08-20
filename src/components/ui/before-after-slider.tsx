@@ -2,26 +2,44 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import type { ImageAsset } from '@/types/content';
+import { cn } from '@/lib/utils';
+import type { ImageAsset, SizedImage } from '@/types/content';
+
+/** Les dimensions ne sont connues que côté serveur (voir `withImageSize`). */
+type SliderImage = ImageAsset & Partial<Pick<SizedImage, 'width' | 'height'>>;
 
 type BeforeAfterSliderProps = {
-	before: ImageAsset;
-	after: ImageAsset;
+	before: SliderImage;
+	after: SliderImage;
 	label: string;
 };
 
 export function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderProps) {
 	const [position, setPosition] = React.useState(50);
+	// Avec les dimensions : le comparateur prend la hauteur naturelle de la photo.
+	// Sans : on retombe sur un cadre 4/3 et un recadrage `cover`.
+	const natural = after.width && after.height ? { width: after.width, height: after.height } : undefined;
 
 	return (
-		<div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-muted select-none">
-			<Image
-				src={after.src}
-				alt={after.alt}
-				fill
-				sizes="(min-width: 768px) 60vw, 90vw"
-				className="object-cover"
-			/>
+		<div
+			className={cn(
+				'relative w-full overflow-hidden rounded-2xl bg-muted select-none',
+				!natural && 'aspect-4/3',
+			)}
+		>
+			{/* L'image « après » est dans le flux : c'est elle qui donne sa hauteur au conteneur. */}
+			{natural ? (
+				<Image
+					src={after.src}
+					alt={after.alt}
+					width={natural.width}
+					height={natural.height}
+					sizes="(min-width: 768px) 60vw, 90vw"
+					className="block h-auto w-full"
+				/>
+			) : (
+				<Image src={after.src} alt={after.alt} fill sizes="(min-width: 768px) 60vw, 90vw" className="object-cover" />
+			)}
 			<div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
 				<Image
 					src={before.src}

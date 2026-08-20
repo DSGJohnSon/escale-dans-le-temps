@@ -16,8 +16,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://escaledansletemps.fr"),
   title: {
-    default: "L'Escale dans le Temps — Rénovation de meubles",
-    template: "%s · L'Escale dans le Temps",
+    default: "Escale dans le Temps — Rénovation de meubles",
+    template: "%s · Escale dans le Temps",
   },
   description:
     "Rénovation de meubles anciens sur-mesure : peinture, patine, finitions soignées. Meubles déjà rénovés ou à personnaliser, devis gratuit.",

@@ -8,18 +8,37 @@ const placeholderImage = {
 
 const rawProducts: ProductInput[] = [
 	{
-		name: 'Bureau Louis XVI',
+		name: 'Chevet en chêne massif',
+		subtitle: 'Style Louis Philippe',
 		category: 'Rénovés',
-		status: 'Réservé',
-		addedAt: '2026-08-10',
-		dimensions: { height: 68, width: 45, length: 38 },
+		status: 'En vente',
+		addedAt: '2026-08-20',
+		dimensions: { height: 60, width: 45, length: 38 },
 		price: 320,
 		description:
-			"Bureau de style Louis XV entièrement repeint en bleu nuit, ferrures d'origine redorées à la feuille. Une pièce prête à rejoindre votre intérieur.",
+			"Chevet en chêne massif, style Louis Philippe. Entièrement repeint en bleu nuit, ferrures d'origine redorées à la feuille. Une pièce prête à rejoindre votre intérieur.",
 		photos: [
-			{ kind: 'before-after', before: placeholderImage, after: placeholderImage },
-			{ kind: 'single', image: placeholderImage },
-			{ kind: 'single', image: placeholderImage },
+			{ kind: 'before-after', before: {
+				src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_avant-2.jpeg',
+				alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Face Avant - Avant rénovation',
+			}, after: {
+				src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_apres-2.jpeg',
+				alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Face Avant - Après rénovation',
+			} },
+			{
+				kind: "single",
+				image: {
+					src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_apres-1.jpeg',
+					alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Latérale - Après rénovation',
+				}
+			},
+			{
+				kind: "single",
+				image: {
+					src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_avant-1.jpeg',
+					alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Latérale - Avant rénovation',
+				}
+			}
 		],
 	},
 ];
