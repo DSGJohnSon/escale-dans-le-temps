@@ -11,7 +11,7 @@ const rawProducts: ProductInput[] = [
 		name: 'Chevet en chêne massif',
 		subtitle: 'Style Louis Philippe',
 		category: 'Rénovés',
-		status: 'En vente',
+		status: 'Réservé',
 		addedAt: '2026-08-20',
 		dimensions: { height: 60, width: 45, length: 38 },
 		price: 320,
