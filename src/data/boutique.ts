@@ -31,4 +31,22 @@ export const boutiqueContent: BoutiqueContent = {
 		resetCta: 'Envoyer une nouvelle demande',
 		errorMessage: 'Une erreur est survenue, merci de réessayer ou de nous contacter directement.',
 	},
+	quoteForm: {
+		title: 'Envie de faire rénover cette pièce ?',
+		description:
+			'Dites-nous comment vous l’imaginez (couleurs, finitions, ornements). Nous revenons vers vous avec une proposition et un devis personnalisé.',
+		firstName: 'Prénom',
+		lastName: 'Nom',
+		email: 'E-mail',
+		phone: 'Téléphone',
+		message: 'Votre projet',
+		messageHint: 'Facultatif',
+		messagePlaceholder: 'Couleurs, finitions, style souhaité, délais…',
+		submit: 'Demander un devis',
+		submitting: 'Envoi en cours...',
+		successHeading: 'Demande envoyée !',
+		successMessage: 'Merci, nous revenons vers vous très vite avec une proposition personnalisée.',
+		resetCta: 'Envoyer une nouvelle demande',
+		errorMessage: 'Une erreur est survenue, merci de réessayer ou de nous contacter directement.',
+	},
 };

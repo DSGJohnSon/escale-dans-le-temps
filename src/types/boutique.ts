@@ -14,6 +14,8 @@ export interface ReservationFormLabels {
 	phone: string;
 	message: string;
 	messageHint: string;
+	/** Texte d'exemple du champ message. Défaut : « Une question sur « <produit> » ? ». */
+	messagePlaceholder?: string;
 	submit: string;
 	submitting: string;
 	successHeading: string;
@@ -31,4 +33,6 @@ export interface BoutiqueContent {
 	emptyMessage: string;
 	backToBoutique: string;
 	reservationForm: ReservationFormLabels;
+	/** Variante du formulaire pour les pièces « Sur devis » (demande de rénovation personnalisée). */
+	quoteForm: ReservationFormLabels;
 }

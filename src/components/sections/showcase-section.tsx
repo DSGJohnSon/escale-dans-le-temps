@@ -4,7 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
 import { RichHeading } from '@/components/ui/rich-heading';
 import { SectionEyebrow } from '@/components/ui/section-eyebrow';
-import { formatDimensions, formatProductPrice, getFeaturedProducts, getShowcaseThumbnail } from '@/lib/products';
+import {
+	formatDimensions,
+	formatProductPrice,
+	getFeaturedProducts,
+	getProductHref,
+	getShowcaseThumbnail,
+	getStatusBadge,
+} from '@/lib/products';
 import { cn } from '@/lib/utils';
 import type { ShowcaseContent } from '@/types/home';
 
@@ -37,10 +44,11 @@ export function ShowcaseSection({ showcase }: ShowcaseSectionProps) {
 					{featuredProducts.map((product) => {
 						const thumbnail = getShowcaseThumbnail(product);
 						const dimensions = formatDimensions(product.dimensions);
+						const statusBadge = getStatusBadge(product);
 
 						return (
 							<Reveal key={product.slug} as="li" className="group relative aspect-4/5 overflow-hidden rounded-2xl">
-								<Link href={`/boutique/${product.slug}`} className="absolute inset-0">
+								<Link href={getProductHref(product)} className="absolute inset-0">
 									<Image
 										src={thumbnail.default.src}
 										alt={thumbnail.default.alt}
@@ -57,14 +65,16 @@ export function ShowcaseSection({ showcase }: ShowcaseSectionProps) {
 										className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 									/>
 
-									{product.status !== 'En vente' && (
+									{statusBadge && (
 										<span
 											className={cn(
 												'absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-medium tracking-wide uppercase',
-												product.status === 'Vendu' ? 'bg-foreground text-background' : 'bg-primary text-primary-foreground',
+												statusBadge === 'Vendu' || statusBadge === 'Indisponible'
+													? 'bg-foreground text-background'
+													: 'bg-primary text-primary-foreground',
 											)}
 										>
-											{product.status}
+											{statusBadge}
 										</span>
 									)}
 

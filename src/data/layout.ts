@@ -9,6 +9,7 @@ export const headerContent: HeaderContent = {
 		{ label: 'Accueil', href: '/' },
 		{ label: 'Services', href: '/#services' },
 		{ label: 'Boutique', href: '/boutique' },
+		{ label: 'Galerie', href: '/galerie' },
 	],
 	cta: {
 		label: 'Demande de devis',

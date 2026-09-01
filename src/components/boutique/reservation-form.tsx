@@ -15,6 +15,8 @@ type ReservationFormProps = {
 	productSlug: string;
 	productName: string;
 	labels: ReservationFormLabels;
+	/** `reservation` (défaut) pour une pièce à prix fixe, `quote` pour une demande de devis « Sur devis ». */
+	intent?: 'reservation' | 'quote';
 };
 
 type Values = {
@@ -45,7 +47,7 @@ async function submitReservationRequest(payload: Record<string, string>): Promis
 	}
 }
 
-export function ReservationForm({ productSlug, productName, labels }: ReservationFormProps) {
+export function ReservationForm({ productSlug, productName, labels, intent = 'reservation' }: ReservationFormProps) {
 	const [values, setValues] = React.useState<Values>(emptyValues);
 	const [errors, setErrors] = React.useState<FieldErrors>({});
 	const [status, setStatus] = React.useState<Status>('idle');
@@ -95,6 +97,7 @@ export function ReservationForm({ productSlug, productName, labels }: Reservatio
 				message: values.message.trim(),
 				company: honeypot,
 				slug: productSlug,
+				intent,
 			});
 			setStatus('success');
 			setValues(emptyValues);
@@ -180,7 +183,7 @@ export function ReservationForm({ productSlug, productName, labels }: Reservatio
 							rows={4}
 							value={values.message}
 							onChange={(e) => updateValue('message', e.target.value)}
-							placeholder={`Une question sur « ${productName} » ?`}
+							placeholder={labels.messagePlaceholder ?? `Une question sur « ${productName} » ?`}
 						/>
 					</FormField>
 

@@ -10,7 +10,14 @@
       "Bash(taskkill //PID 25088 //F)",
       "Bash(npm uninstall *)",
       "Bash(npx tsc *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -p \"require\\('next/package.json'\\).version\")",
+      "Bash(echo \"EXIT: $?\")",
+      "WebFetch(domain:escaledansletemps.fr)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:www.bing.com)",
+      "WebFetch(domain:html.duckduckgo.com)",
+      "Bash(npx next *)"
     ]
   }
 }

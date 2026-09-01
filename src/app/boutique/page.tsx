@@ -5,7 +5,7 @@ import { RichHeading } from '@/components/ui/rich-heading';
 import { SectionEyebrow } from '@/components/ui/section-eyebrow';
 import { buttonVariants } from '@/components/ui/button';
 import { boutiqueContent } from '@/data/boutique';
-import { getProductsByCategory } from '@/lib/products';
+import { getBoutiqueProducts } from '@/lib/products';
 import type { Product } from '@/types/product';
 
 export const metadata: Metadata = {
@@ -43,8 +43,8 @@ function CategorySection({
 }
 
 export default function BoutiquePage() {
-	const renovatedProducts = getProductsByCategory('Rénovés');
-	const rawProducts = getProductsByCategory('Bruts');
+	const renovatedProducts = getBoutiqueProducts('Rénovés');
+	const rawProducts = getBoutiqueProducts('Bruts');
 
 	return (
 		<div className="w-full">

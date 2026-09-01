@@ -3,7 +3,9 @@ import Link from "next/link";
 import {
   formatDimensions,
   formatProductPrice,
+  getProductHref,
   getShowcaseThumbnail,
+  getStatusBadge,
 } from "@/lib/products";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/types/product";
@@ -16,10 +18,11 @@ type ProductCardProps = {
 export function ProductCard({ product }: ProductCardProps) {
   const thumbnail = getShowcaseThumbnail(product);
   const dimensions = formatDimensions(product.dimensions);
+  const statusBadge = getStatusBadge(product);
 
   return (
     <li className="group overflow-hidden rounded-2xl border border-border bg-card">
-      <Link href={`/boutique/${product.slug}`} className="block">
+      <Link href={getProductHref(product)} className="block">
         <div className="relative aspect-4/5 overflow-hidden">
           <Image
             src={thumbnail.default.src}
@@ -43,16 +46,16 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           </div>
 
-          {product.status !== "En vente" && (
+          {statusBadge && (
             <span
               className={cn(
                 "absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-medium tracking-wide uppercase",
-                product.status === "Vendu"
+                statusBadge === "Vendu" || statusBadge === "Indisponible"
                   ? "bg-foreground text-background"
                   : "bg-primary text-primary-foreground",
               )}
             >
-              {product.status}
+              {statusBadge}
             </span>
           )}
         </div>

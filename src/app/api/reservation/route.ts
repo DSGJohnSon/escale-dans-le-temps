@@ -61,6 +61,7 @@ export async function POST(request: Request) {
 	const phone = String(body.phone ?? '').trim();
 	const message = String(body.message ?? '').trim();
 	const slug = String(body.slug ?? '').trim();
+	const intent = body.intent === 'quote' ? 'quote' : 'reservation';
 
 	if (!firstName || !lastName || !email || !phone || !slug) {
 		return Response.json({ error: 'invalid_request' }, { status: 400 });
@@ -83,20 +84,23 @@ export async function POST(request: Request) {
 
 	const attachments = await loadProductAttachments([...photoSrcs]);
 
+	const heading = intent === 'quote' ? 'Demande de devis' : 'Demande de réservation';
+	const messageLabel = intent === 'quote' ? 'Projet' : 'Message';
+
 	const html = `
-		<h2>Demande de réservation</h2>
+		<h2>${heading}</h2>
 		<p><strong>Produit :</strong> ${escapeHtml(product.name)} (réf. ${escapeHtml(product.slug)})</p>
 		<p><strong>Nom :</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
 		<p><strong>E-mail :</strong> ${escapeHtml(email)}</p>
 		<p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p>
-		${message ? `<p><strong>Message :</strong></p><p>${escapeHtml(message).replace(/\n/g, '<br />')}</p>` : ''}
+		${message ? `<p><strong>${messageLabel} :</strong></p><p>${escapeHtml(message).replace(/\n/g, '<br />')}</p>` : ''}
 	`;
 
 	const { error } = await resend.emails.send({
 		from: fromAddress,
 		to: recipients,
 		replyTo: email,
-		subject: `Demande de réservation — ${product.name}`,
+		subject: `${heading} — ${product.name}`,
 		html,
 		attachments,
 	});
