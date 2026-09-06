@@ -13,18 +13,20 @@ const rawProducts: ProductInput[] = [
 		category: 'Rénovés',
 		status: 'Indisponible',
 		addedAt: '2026-08-20',
-		dimensions: { height: 60, width: 45, length: 38 },
-		price: 320,
+		dimensions: { height: 88.5, width: 43.5, length: 54 },
+		price: 0,
 		description:
-			"Chevet en chêne massif, style Louis Philippe. Entièrement repeint en bleu nuit, ferrures d'origine redorées à la feuille. Une pièce prête à rejoindre votre intérieur.",
+			"",
 		photos: [
-			{ kind: 'before-after', before: {
-				src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_avant-2.jpeg',
-				alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Face Avant - Avant rénovation',
-			}, after: {
-				src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_apres-2.jpeg',
-				alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Face Avant - Après rénovation',
-			} },
+			{
+				kind: 'before-after', before: {
+					src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_avant-2.jpeg',
+					alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Face Avant - Avant rénovation',
+				}, after: {
+					src: '/images/meubles/chevet-chene-massif-style-louis-philippe/chevet-chene-massif-style-louis-philippe_apres-2.jpeg',
+					alt: 'Chevet en chêne massif - Style Louis Philippe - Vue Face Avant - Après rénovation',
+				}
+			},
 			{
 				kind: "single",
 				image: {
@@ -73,39 +75,41 @@ const rawProducts: ProductInput[] = [
 			},
 		],
 		photos: [
-			{ kind: 'before-after', before: {
-				src: '/images/meubles/cathy-chevet/cathy_chevet_avant-face-avant-2.jpeg',
-				alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Avant rénovation',
-			}, after: {
-				src: '/images/meubles/cathy-chevet/cathy_chevet_apres-face-avant-2.jpeg',
-				alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Après rénovation',
-			} },
+			{
+				kind: 'before-after', before: {
+					src: '/images/meubles/cathy-chevet/cathy_chevet_avant-face-avant-2.jpeg',
+					alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Avant rénovation',
+				}, after: {
+					src: '/images/meubles/cathy-chevet/cathy_chevet_apres-face-avant-2.jpeg',
+					alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Après rénovation',
+				}
+			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/cathy-chevet/cathy_chevet_apres-face-avant.jpeg',
-				alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Après rénovation',
+					alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Après rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/cathy-chevet/cathy_chevet_avant-face-avant.jpeg',
-				alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Avant rénovation',
+					alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Avant rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/cathy-chevet/cathy_chevet_avant-face-dessus.jpeg',
-				alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Avant rénovation',
+					alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Avant rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/cathy-chevet/cathy_chevet_apres-face-dessus.jpeg',
-				alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Apres rénovation',
+					alt: 'Chevet en chêne nommé "Cathy" - Disponible à la vente - Vue Face Avant - Apres rénovation',
 				}
 			}
 		],
@@ -121,46 +125,48 @@ const rawProducts: ProductInput[] = [
 		description:
 			"",
 		photos: [
-			{ kind: 'before-after', before: {
-				src: '/images/meubles/agnes-bureau/agnes_bureau_avant-face-avant.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Avant - Avant rénovation',
-			}, after: {
-				src: '/images/meubles/agnes-bureau/agnes_bureau_apres-face-avant.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Avant - Après rénovation',
-			} },
+			{
+				kind: 'before-after', before: {
+					src: '/images/meubles/agnes-bureau/agnes_bureau_avant-face-avant.jpeg',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Avant - Avant rénovation',
+				}, after: {
+					src: '/images/meubles/agnes-bureau/agnes_bureau_apres-face-avant.jpeg',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Avant - Après rénovation',
+				}
+			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/agnes-bureau/agnes_bureau_apres-face-dessus.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Dessus - Après rénovation',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Dessus - Après rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/agnes-bureau/agnes_bureau_avant-face-dessus.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Dessus - Avant rénovation',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Dessus - Avant rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/agnes-bureau/agnes_bureau_avant-face-cote.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Côté - Avant rénovation',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Côté - Avant rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/agnes-bureau/agnes_bureau_apres-face-cote.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Côté - Apres rénovation',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue Face Côté - Apres rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles/agnes-bureau/agnes_bureau_apres-tirroir.jpeg',
-				alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue du tirroir - Apres rénovation',
+					alt: 'Bureau en chêne nommé "Agnès" - Indisponible / Vendu - Vue du tirroir - Apres rénovation',
 				}
 			}
 		],
@@ -171,21 +177,25 @@ const rawProducts: ProductInput[] = [
 		category: 'Bruts',
 		status: 'Sur devis',
 		addedAt: '2026-09-01',
-		description:
-			"",
+		dimensions: {
+			height: 65.5,
+			length: 33.5,
+			width: 43
+		},
+		description: "",
 		photos: [
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles-bruts/chev-04-2026-1/chevet-04-2026-brut-1.jpeg',
-				alt: 'Chevet brut n°04-2026-1 - Disponible pour rénovation',
+					alt: 'Chevet brut n°04-2026-1 - Disponible pour rénovation',
 				}
 			},
 			{
 				kind: "single",
 				image: {
 					src: '/images/meubles-bruts/chev-04-2026-1/chevet-04-2026-brut-2.jpeg',
-				alt: 'Chevet brut n°04-2026-1 - Disponible pour rénovation',
+					alt: 'Chevet brut n°04-2026-1 - Disponible pour rénovation',
 				}
 			},
 		],
@@ -204,7 +214,50 @@ const rawProducts: ProductInput[] = [
 				kind: "single",
 				image: {
 					src: '/images/meubles-bruts/com-08-2025-1/commode-08-2025-brut.jpeg',
-				alt: 'Commode brute n°08-2025-1 - Disponible pour rénovation',
+					alt: 'Commode brute n°08-2025-1 - Disponible pour rénovation',
+				}
+			},
+		],
+	},
+	{
+		name: 'Elisabeth',
+		subtitle: 'Lampe à poser',
+		category: 'Rénovés',
+		status: 'En vente',
+		addedAt: '2026-09-06',
+		price: 45,
+		description: [
+
+			{
+				kind: 'paragraph',
+				text: "Illuminez votre intérieur avec cette magnifique lampe de table unique en son genre, qui marie élégance classique et motifs vibrants.",
+			},
+			{
+				kind: 'paragraph',
+				text: "Son abat-jour en tissu s'inspire des designs traditionnels de majolique méditerranéenne, avec des volutes de bleus profonds, des touches de jaune doré et d'orange.",
+			},
+			{
+				kind: 'paragraph',
+				text: "Le pied de lampe est peint d'un bleu cobalt profond et rehaussé de délicats détails dorés peints à la main, créant un contraste sophistiqué. Cette lampe est parfaite pour apporter une touche de chaleur et d'art à un salon, une chambre ou un bureau.",
+			},
+		],
+		photos: [
+			{
+				kind: "before-after",
+				before: {
+					src: '/images/meubles/elisabeth-lampe/elisabeth-lampe_avant_face-avant.jpeg',
+					alt: 'Lampe à poser nommée "Elisabeth" - Disponible à la vente - Vue Face Avant - Avant rénovation',
+				},
+				after: {
+				src: '/images/meubles/elisabeth-lampe/elisabeth-lampe_apres_face-avant.jpeg',
+				alt: 'Lampe à poser nommée "Elisabeth" - Disponible à la vente - Vue Face Avant - Après rénovation',
+
+			}			},
+			{
+				kind: "single",
+				image: {
+					src: '/images/meubles/elisabeth-lampe/elisabeth-lampe_apres_face-avant_allumee.jpeg',
+				alt: 'Lampe à poser nommée "Elisabeth" - Disponible à la vente - Vue Face Avant avec lampe allumée - Après rénovation',
 				}
 			},
 		],

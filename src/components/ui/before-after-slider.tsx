@@ -17,7 +17,7 @@ type BeforeAfterSliderProps = {
 export function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderProps) {
 	const [position, setPosition] = React.useState(50);
 	// Avec les dimensions : le comparateur prend la hauteur naturelle de la photo.
-	// Sans : on retombe sur un cadre 4/3 et un recadrage `cover`.
+	// Sans : on retombe sur un cadre 4/3, l'image étant affichée en entier (`contain`).
 	const natural = after.width && after.height ? { width: after.width, height: after.height } : undefined;
 
 	return (
@@ -38,7 +38,7 @@ export function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderPro
 					className="block h-auto w-full"
 				/>
 			) : (
-				<Image src={after.src} alt={after.alt} fill sizes="(min-width: 768px) 60vw, 90vw" className="object-cover" />
+				<Image src={after.src} alt={after.alt} fill sizes="(min-width: 768px) 60vw, 90vw" className="object-contain" />
 			)}
 			<div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
 				<Image
@@ -46,7 +46,7 @@ export function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderPro
 					alt={before.alt}
 					fill
 					sizes="(min-width: 768px) 60vw, 90vw"
-					className="object-cover"
+					className="object-contain"
 				/>
 			</div>
 

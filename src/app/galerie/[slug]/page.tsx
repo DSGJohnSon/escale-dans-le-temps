@@ -32,7 +32,12 @@ export default async function GalerieProductPage({ params }: PageProps<'/galerie
 	return (
 		<div className="w-full">
 			<Header />
-			<ProductDetail product={product} backHref="/galerie" backLabel={galerieContent.backToGalerie} />
+			<ProductDetail
+				product={product}
+				backHref="/galerie"
+				backLabel={galerieContent.backToGalerie}
+				variant="stacked"
+			/>
 		</div>
 	);
 }

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  formatDimensions,
   formatProductPrice,
   getProductHref,
   getShowcaseThumbnail,
@@ -13,12 +12,14 @@ import { Button } from "../ui/button";
 
 type ProductCardProps = {
   product: Product;
+  /** `gallery` : contexte portfolio — masque la pastille de statut et le prix. */
+  variant?: "shop" | "gallery";
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, variant = "shop" }: ProductCardProps) {
   const thumbnail = getShowcaseThumbnail(product);
-  const dimensions = formatDimensions(product.dimensions);
-  const statusBadge = getStatusBadge(product);
+  const isGallery = variant === "gallery";
+  const statusBadge = isGallery ? null : getStatusBadge(product);
 
   return (
     <li className="group overflow-hidden rounded-2xl border border-border bg-card">
@@ -67,11 +68,13 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.subtitle && (
             <p className="font-heading text-lg">{product.subtitle}</p>
           )}
-          <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 text-sm text-muted-foreground">
-            <span className="font-medium whitespace-nowrap text-primary">
-              {formatProductPrice(product)}
-            </span>
-          </div>
+          {!isGallery && (
+            <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 text-sm text-muted-foreground">
+              <span className="font-medium whitespace-nowrap text-primary">
+                {formatProductPrice(product)}
+              </span>
+            </div>
+          )}
         </div>
       </Link>
     </li>
